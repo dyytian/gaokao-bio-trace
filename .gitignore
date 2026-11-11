@@ -1,0 +1,17 @@
+# 防误传：论文全文、题库原件、图片一律不进本仓库
+*.pdf
+*.doc
+*.docx
+*.xls
+*.zip
+*.png
+*.jpg
+*.jpeg
+*.wmf
+*.tif
+*.tiff
+
+# 本地工作产物与旧版本
+_旧版本/
+issues_raw.json
+待审清单.md

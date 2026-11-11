@@ -9,6 +9,9 @@
 3. 不生成 DOI。DOI 仅来自：原表记载 / 项目内交叉检索 /（可选）CrossRef 标题核验。
    查不到一律留空并标注「待核」，来源分级写入「DOI来源」列。
 4. 输出前做敏感信息黑名单校验，命中即中止。
+5. 对外公开范围固定为 2025–2026。早年只有零星定向回溯案例、没有完整题库分母，
+   不纳入公开表，避免被误读为「逐年增长」。若日后补齐原卷并决定扩范围，
+   须同时修改 PUBLIC_YEARS 与 write_readme() 里的范围说明。
 
 用法：
     python build_public_table.py            # 离线：仅项目内交叉补全
@@ -32,6 +35,10 @@ ROOT = OUT.parent
 VERSION = "第一版"
 BUILD_DATE = "2026-11-10"
 BASENAME = "高考生物真题×顶刊论文对照表-" + VERSION
+
+# 对外公开范围：刻意只保留近两年。2022–2024 只有零星案例、无完整题库分母，
+# 与 2025 并列会制造「逐年递增」的假趋势，因此暂不对外发布。
+PUBLIC_YEARS = ("2025", "2026")
 
 HEADERS = [
     "序号", "年份", "卷别", "卷型", "题号",
@@ -367,6 +374,8 @@ def validate(records):
                     problems.append((i, k, bad, v[:80]))
         if r["DOI"] and not re.fullmatch(r"10\.\d{4,9}/\S+", r["DOI"]):
             problems.append((i, "DOI", "格式非法", r["DOI"]))
+        if r["年份"] not in PUBLIC_YEARS:
+            problems.append((i, "年份", "超出对外公开范围", r["年份"]))
     return problems
 
 
@@ -516,6 +525,16 @@ def write_readme(path, records, online_used):
 **本表不含**试题原文、答案、解析、题目图片、论文全文 PDF，也不含任何第三方题库整理稿。
 「考查情境（概括）」为对题目素材的简述，不是题干复制。
 
+## 对外公开范围：仅 2025–2026 两年
+
+本表**有意只收录 2025、2026 两个年度**的逐题记录，不代表「近五年都查完了」。
+
+2022–2024 年只做过少量定向回溯，没有建立完整题库、没有全卷分母，只有零星案例。
+把它们和 2025 年放进同一张表比较「逐年增长」，比出来的是筛查投入，不是命题趋势。
+因此这三年**暂不纳入公开内容**；本地原始记录保留，待补齐原卷并逐题建库后再决定是否发布。
+
+请勿用本表推导「一年比一年多」「覆盖率逐年上升」等跨年趋势结论。
+
 ## 数据概况
 
 | 指标 | 数值 |
@@ -533,7 +552,8 @@ def write_readme(path, records, online_used):
 各卷原始速查表混用三种置信度记法——纯星级、简写「★5」、文字等级「高/中高」；
 文字等级**不折算为星级**，以免制造原表不存在的判定，故单列「未分级」。
 不同资料里出现过的 35 / 97 / 100 / 101 等数字，分别来自不同时点与不同卷型口径，
-**本表只采用上表口径**，请勿与其他文档的数字直接相加或互换。
+其中部分还包含 2022–2024 的定向回溯案例与模考卷记录；**本表只采用上表口径**，
+请勿与其他文档的数字直接相加或互换。
 
 ## 字段说明
 
@@ -589,7 +609,7 @@ def write_readme(path, records, online_used):
 
 ## 数据缺口：目前还缺哪些试卷
 
-本表是**逐题溯源记录**，不等于已覆盖全部试卷。截至 2026-11-11，缺口如下，欢迎提供可公开访问的权威来源线索；**不接收试题原文、答案、解析、题目图片或论文全文**。
+本表是**逐题溯源记录**，不等于已覆盖全部试卷。以下缺口均指 2025–2026 公开范围；截至 2026-11-11 情况如下，欢迎提供可公开访问的权威来源线索；**不接收试题原文、答案、解析、题目图片或论文全文**。
 
 ### 1. 整卷未到手（2026 年 5 个卷别）
 
@@ -613,7 +633,7 @@ def write_readme(path, records, online_used):
 ### 4. 其他限制
 
 - 上述「部分收录」的卷别多只有题干，暂无答案与解析。
-- 表中 8 条记录尚未锁定唯一 DOI，标为「待核」（见附录 B）；40 条关联度为「未分级」（原始记录用文字等级，未折算星级）。
+- 表中 {len(todo_rows)} 条记录尚未锁定唯一 DOI，标为「待核」（见附录 B）；{ungraded} 条关联度为「未分级」（原始记录用文字等级，未折算星级）。
 
 > 如果你手上有上述卷别的**官方或权威公开来源链接**，欢迎开 Issue 只提供链接与卷别说明。请勿在 Issue 中粘贴试题原文、答案、解析、题目图片或论文全文 PDF。
 
@@ -655,6 +675,11 @@ def main():
     records = collect_records()
     print("  合计记录:", len(records))
 
+    print("=== 1b. 限定对外范围 2025–2026 ===")
+    before = len(records)
+    records = [r for r in records if r["年份"] in PUBLIC_YEARS]
+    print(f"  排除 {before - len(records)} 条范围外记录；保留 {len(records)} 条")
+
     print("=== 2. 建立项目内 DOI 索引并交叉补全 ===")
     index = build_doi_index()
     print("  索引条目:", len(index))
@@ -685,9 +710,15 @@ def main():
     write_xlsx(xlsx, HEADERS, rows)
     write_csv(csvp, HEADERS, rows)
     write_readme(readme, records, online)
+    # README 是数据说明的首页副本，一并重生成，避免两份文档日后不同步
+    (OUT / "README.md").write_text(
+        readme.read_text(encoding="utf-8")
+        + "\n> 本文件为 `数据说明.md` 的首页副本，内容一致，供 GitHub 仓库首页展示。\n",
+        encoding="utf-8",
+    )
 
     print("=== 5. 输出 ===")
-    for p in (xlsx, csvp, readme):
+    for p in (xlsx, csvp, readme, OUT / "README.md"):
         print(f"  {p.name}  {p.stat().st_size:,} bytes")
     print("  确证(星级≥3):", sum(1 for r in records if r["确证"] == "是"))
     print("  未分级(文字等级):", sum(1 for r in records if r["确证"] == "未分级"))

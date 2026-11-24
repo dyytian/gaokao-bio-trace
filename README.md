@@ -1,6 +1,6 @@
-# 高考生物真题 × 顶刊论文对照表 · 第一版
+# 高考生物真题 × 顶刊论文对照表 · 第二版
 
-> 生成日期：2026-11-10　|　数据版本：第一版　|　许可：CC BY-NC-SA 4.0（见 `LICENSE.txt`）
+> 生成日期：2026-11-23　|　数据版本：第二版　|　许可：CC BY-NC-SA 4.0（见 `LICENSE.txt`）
 
 ## 这是什么
 
@@ -18,18 +18,25 @@
 
 请勿用本表推导「一年比一年多」「覆盖率逐年上升」等跨年趋势结论。
 
+
+## 论文解读（2025–2026 陕晋宁青 / 陕晋青宁卷）
+
+`论文解读/` 收录 16 篇纯论文解读（2025 卷 7 篇 + 2026 卷 9 篇）：书目信息、摘要中文翻译、关键结果、教学要点。
+**不含**试题原文、题干、选项、标准答案、解析、题目图片、论文全文 PDF 与本地路径。文件名的 Q 编号仅用于与对照表交叉定位。
+详见 `论文解读/README.md`。星级与确证判定仍以本对照表为准。
+
 ## 数据概况
 
 | 指标 | 数值 |
 |---|---:|
-| 记录总数 | 97 |
-| 「确证」（星级 ≥ ★★★） | 54 |
+| 记录总数 | 99 |
+| 「确证」（星级 ≥ ★★★） | 56 |
 | 「未分级」（原表用文字等级，未折算星级） | 40 |
 | 「否」（低于三星或明确标待核） | 3 |
-| 含 DOI 的记录 | 89（91%） |
+| 含 DOI 的记录 | 82（82%） |
 | 覆盖年份 | 2025、2026 |
 | 覆盖卷别 | 23 |
-| 仅计高考真题/选考卷的确证记录 | 49 |
+| 仅计高考真题/选考卷的确证记录 | 51 |
 
 口径说明：本表按「逐题记录」统计，卷型列区分高考真题、选考、模考/调研、合格考。
 各卷原始速查表混用三种置信度记法——纯星级、简写「★5」、文字等级「高/中高」；
@@ -60,14 +67,13 @@
 
 | 来源 | 条数 |
 |---|---:|
-| 原表记载 | 71 |
-| CrossRef 标题核验 | 9 |
-| 项目内交叉检索 | 9 |
-| 待核 | 8 |
+| 原表记载 | 74 |
+| 待核 | 17 |
+| 项目内交叉检索 | 8 |
 
 - **原表记载**：各卷溯源总表速查表中已写明的 DOI，可信度最高。
 - **项目内交叉检索**：原表 DOI 列为空，但同一论文标题在项目其他文档中与某 DOI 共现，且候选唯一。
-- **CrossRef 标题核验**：按论文标题查询 CrossRef，仅当标题规范化相似度 ≥ 0.88 时采纳。（本次已启用）
+- **CrossRef 标题核验**：按论文标题查询 CrossRef，仅当标题规范化相似度 ≥ 0.88 时采纳。（本次未启用）
 - **待核**：尚无可靠来源，DOI 留空。请自行按论文标题检索，勿据空值推测。
 
 > 注意：DOI 存在不等于已逐篇访问出版商页面核对全文。本表仅保证标识符来源可追溯，
@@ -91,7 +97,7 @@
 2. 标注「否」及「待核」的记录不得作为定论引用。
 3. 试卷权属归相应考试机构；论文版权归各出版商与作者。本表仅登记事实性书目信息与对照判断，
    不含受版权保护的正文，使用者如需原文请自行通过合法渠道获取。
-4. 引用请标注：新高考生物试题与顶刊论文相关性研究《高考生物真题×顶刊论文对照表 第一版》，并遵守 CC BY-NC-SA 4.0（署名、非商业性使用、相同方式共享）。
+4. 引用请标注：新高考生物试题与顶刊论文相关性研究《高考生物真题×顶刊论文对照表 第二版》，并遵守 CC BY-NC-SA 4.0（署名、非商业性使用、相同方式共享）。
 
 ## 数据缺口：目前还缺哪些试卷
 
@@ -119,7 +125,7 @@
 ### 4. 其他限制
 
 - 上述「部分收录」的卷别多只有题干，暂无答案与解析。
-- 表中 8 条记录尚未锁定唯一 DOI，标为「待核」（见附录 B）；40 条关联度为「未分级」（原始记录用文字等级，未折算星级）。
+- 表中 17 条记录尚未锁定唯一 DOI，标为「待核」（见附录 B）；40 条关联度为「未分级」（原始记录用文字等级，未折算星级）。
 
 > 如果你手上有上述卷别的**官方或权威公开来源链接**，欢迎开 Issue 只提供链接与卷别说明。请勿在 Issue 中粘贴试题原文、答案、解析、题目图片或论文全文 PDF。
 
@@ -131,15 +137,7 @@
 
 | 题目 | DOI | 反查标题（CrossRef） | 相似度 |
 |---|---|---|---|
-| 北京卷 Q21 | 10.1002/wlb3.01112 | Density estimation for an island population of raccoon dogs in Japan u | 1.00 |
-| 安徽卷 Q19 | 10.1104/pp.110.168500 | Genetic Control of a Transition from Black to Straw-White Seed Hull in | 1.00 |
-| 安徽卷 Q20 | 10.1038/s41467-024-49099-y | Ferroptosis induction in host rice by endophyte OsiSh-2 is necessary f | 1.00 |
-| 广东卷 Q19 | 10.1101/gr.571002 | Identification of the Single Base Change Causing the Callipyge Muscle  | 1.00 |
-| 江苏卷 Q10 | 10.1016/j.cell.2009.06.051 | A Serotonin-Dependent Mechanism Explains the Leptin Regulation of Bone | 1.00 |
-| 河南卷 Q16 | 10.1016/j.cell.2024.11.004 | Intermittent fasting triggers interorgan communication to suppress hai | 1.00 |
-| 湖北卷 Q13 | 10.1016/j.cellsig.2025.111616 | AP2A1 modulates cell states between senescence and rejuvenation | 1.00 |
-| 陕晋宁青卷 Q9 | 10.1038/s41559-025-02653-3 | Genetic basis of camouflage in an alpine plant and its long-term co-ev | 1.00 |
-| 黑吉辽蒙卷 Q10 | 10.1038/s41586-025-08743-3 | Structure and mechanism of the plastid/parasite ATP/ADP translocator | 1.00 |
+| — | — | 本次未启用联网核验 | — |
 
 ## 附录 B：仍待核的条目
 
@@ -148,12 +146,21 @@
 
 | 题目 | 论文标题 | 期刊/年份 |
 |---|---|---|
+| 北京卷 Q21 | Density Estimation for an Island Population of Raccoon Dogs in Japan U | Wildlife Biology / 2023 |
+| 安徽卷 Q19 | Genetic Control of a Transition from Black to Straw-White Seed Hull in | Plant Physiology / 2011, 155(3 |
+| 安徽卷 Q20 | Ferroptosis induction in host rice by endophyte OsiSh-2 is necessary f | Nature Communications / 2024 |
+| 广东卷 Q19 | Identification of the single base change causing the callipyge muscle  | Genome Research / 2002 |
+| 江苏卷 Q10 | A Serotonin-Dependent Mechanism Explains the Leptin Regulation of Bone | Cell / 2009 |
 | 江苏卷 Q23 | 基于DNA条形码技术的神农架国家公园川金丝猴食性研究 | 生态学报 / 2024（44 卷 15 期） |
 | 河北卷 Q20 | 运动对高血压大鼠肾上腺髓质素的影响及其机制（景志强、张钧） | 中国康复医学杂志 / 2009 |
+| 河南卷 Q16 | Intermittent fasting triggers interorgan communication to suppress hai | Cell / 2024 |
 | 湖北卷 Q6 | MDCK 无成瘤性悬浮细胞株的蛋白组学差异分析（另见专利 CN118497105A） | 《农业生物技术学报》2025, 33(3): 616-627 |
+| 湖北卷 Q13 | AP2A1 modulates cell states between senescence and rejuvenation | Cellular Signalling / 2025（127 |
 | 湖南卷 Q12 | 油菜中内源赤霉素嫁接转移研究（官春云，湖南农业大学） | 作物学报 / 2000, 26(6):975-976 |
 | 贵州卷 Q17 | '豆绿'牡丹花色调控基因 PsNAC5 克隆及功能分析 | 《植物生理学报》2024 年第 2 期 311–320（国内 |
-| 陕晋青宁卷 Q10 | 宁陕 / 董寨朱鹮再引入与存活率研究 | Bird Conservation Internationa |
+| 黑吉辽蒙卷 Q10 | Structure and mechanism of the plastid/parasite ATP/ADP translocator | Nature / 2025 |
+| 陕晋青宁卷 Q10 | 宁陕 / 董寨朱鹮再引入与存活率研究；新增候选 Nat Commun 2026 朱鹮瓶颈种群恢复 | Bird Conservation Internationa |
+| 陕晋青宁卷 Q18 | 芝麻蒴果数 / 株型相关基因（SiLPT3、SiACS8 等） | 多篇，非单一顶刊 |
 | 陕西西工大15模 Q9 | Induction of functional and expandable hepatocytes from human fibrobla | Cell Stem Cell 2014 |
 | 陕西西工大15模 Q21 | 敲除 msn2 对米曲霉生长和发酵产曲酸的影响（+ 学位论文《基因工程改造米曲霉高产曲酸及发酵工艺研究》） | 《生物技术通报》2022 / 天津科技大学硕士学位论文 20 |
 
@@ -161,10 +168,11 @@
 
 | 文件 | 说明 |
 |---|---|
-| `高考生物真题×顶刊论文对照表-第一版.xlsx` | Excel 版，首行冻结、自动筛选 |
-| `高考生物真题×顶刊论文对照表-第一版.csv` | UTF-8 BOM，与 xlsx 数据完全一致 |
+| `高考生物真题×顶刊论文对照表-第二版.xlsx` | Excel 版，首行冻结、自动筛选 |
+| `高考生物真题×顶刊论文对照表-第二版.csv` | UTF-8 BOM，与 xlsx 数据完全一致 |
 | `build_public_table.py` | 生成脚本（零依赖、相对路径、可核查数据来源） |
 | `LICENSE.txt` | 许可声明 |
 | `数据说明.md` | 本文件 |
+| `论文解读/README.md` | 16 篇论文解读索引（另见 `论文解读/` 子目录） |
 
 > 本文件为 `数据说明.md` 的首页副本，内容一致，供 GitHub 仓库首页展示。

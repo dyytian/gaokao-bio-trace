@@ -32,8 +32,8 @@ from pathlib import Path
 
 OUT = Path(__file__).resolve().parent
 ROOT = OUT.parent
-VERSION = "第一版"
-BUILD_DATE = "2026-11-10"
+VERSION = "第二版"
+BUILD_DATE = "2026-11-23"
 BASENAME = "高考生物真题×顶刊论文对照表-" + VERSION
 
 # 对外公开范围：刻意只保留近两年。2022–2024 只有零星案例、无完整题库分母，
@@ -250,6 +250,10 @@ def fill_doi_internal(records, index):
     filled = 0
     for r in records:
         if r["DOI"]:
+            continue
+        # 只给已确证（星级≥★★★）的记录交叉补 DOI；
+        # 否则待核/低星条目可能因同页共现被误配（如 Q18→Q9 的 DOI）。
+        if r.get("确证") == "否":
             continue
         title = r["溯源论文标题"]
         nt = norm(title)
